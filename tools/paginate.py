@@ -98,6 +98,13 @@ def plan(hs,cap,forcedset=frozenset()):
         best[i]=min(cand)
     groups=[]; i=0
     while i<n: j=best[i][2]; groups.append((i,j)); i=j
+    # a side that would be mostly empty (<35%) is worse than letting a task run over: merge it with the next side
+    k=0
+    while k<len(groups)-1:
+        a,b=groups[k]
+        if sum(hs[a:b])<cap*0.35 and (b) not in forcedset:
+            groups[k]=(a,groups[k+1][1]); del groups[k+1]
+        else: k+=1
     return best[0][0],groups
 def apply(f,groups,hs,cap):
     d=Document(f); prep(d); ks,bl=blocks(d)
@@ -105,7 +112,7 @@ def apply(f,groups,hs,cap):
         if gi>0: set_break(d,ks[bl[i][0]])
         for k in range(i,j):
             a,b=bl[k]; 
-            if hs[k]<=cap*0.97: keep_block(d,ks,a,b)
+            if hs[k]<=cap*0.97 and sum(hs[i:j])<=cap*0.97: keep_block(d,ks,a,b)
         # spread leftover space between tasks on this page
         fill=sum(hs[i:j]); left=cap*0.97-fill
         if j-i>1 and left>0 and fill<=cap:
@@ -124,6 +131,20 @@ pages,groups=plan(hs,cap,fs)
 fills=[round(sum(hs[i:j])/cap*100) for i,j in groups]
 over=[k for k,h in enumerate(hs) if h>cap*0.97]
 shutil.copy(f,TMP+'backup.docx')
-apply(f,groups,hs,cap); pdf=topdf(f)
+flow=max(1,math.ceil(sum(hs)/(cap*0.97)))
+mode='no splits'
+if len(groups)>flow and sum(hs)/(len(groups)*cap)<0.65:
+    # keeping every task whole wastes too much paper: let tasks flow, only forced breaks
+    groups=[]; st=0
+    for k in range(1,len(hs)+1):
+        if k==len(hs) or k in fs: groups.append((st,k)); st=k
+    mode='flowing (keeping tasks whole would waste a side)'
+    d=Document(f); prep(d); ks,bl=blocks(d)
+    for gi,(i,j) in enumerate(groups):
+        if gi>0: set_break(d,ks[bl[i][0]])
+    d.save(f)
+else:
+    apply(f,groups,hs,cap)
+pdf=topdf(f)
 after=int(re.search(r'Pages:\s+(\d+)',subprocess.run(['pdfinfo',pdf],capture_output=True,text=True).stdout)[1])
-print(f"{os.path.basename(f)}: {before} -> {after} sides (planned {pages}); fill % per side {fills}; tasks longer than a side: {len(over)}")
+print(f"{f}: {before} -> {after} sides, {mode}; fill % per side {fills}; tasks longer than a side: {len(over)}")

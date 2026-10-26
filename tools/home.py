@@ -1,16 +1,31 @@
 import json, html
 esol = json.load(open("/home/claude/build/esol.json"))
 docs = json.load(open("/home/claude/build/docs.json"))
+def _li(x): return f'<li><a href="{x["path"][:-5]}.pdf" target="_blank" rel="noopener">{html.escape(x["title"])}</a> <a class="tag" href="{x["path"]}" download>Word ⬇</a></li>'
 def dl(folder):
-    d=[x for x in docs if x["folder"]==folder]
-    if not d: return ""
-    return '<h4>Worksheets and plans</h4><p class="hint">Click a title to view it. Use the Word button to download and edit.</p><ul class="docs">'+"".join(f'<li><a href="{x["path"][:-5]}.pdf" target="_blank" rel="noopener">{html.escape(x["title"])}</a> <a class="tag" href="{x["path"]}" download>Word ⬇</a></li>' for x in d)+"</ul>"
+    d=[x for x in docs if x["folder"]==folder and not x.get("group")]
+    g=[x for x in docs if x["folder"]==folder and x.get("group")]
+    out=""
+    if d: out+='<h4>Worksheets and plans</h4><p class="hint">Click a title to view it. Use the Word button to download and edit.</p><ul class="docs">'+"".join(_li(x) for x in d)+"</ul>"
+    if g:
+        import re as _re
+        les={}
+        for x in g:
+            m=_re.match(r"Lesson (\d+): (.*) – (plan and answers|student handouts)",x["title"]); les.setdefault(int(m[1]),{"t":m[2]})[m[3]]=x
+        rows=""
+        for n in sorted(les):
+            L=les[n]; parts=[]
+            for key,lab in (("plan and answers","Plan"),("student handouts","Handouts")):
+                if key in L: x=L[key]; parts.append(f'<a href="{x["path"][:-5]}.pdf" target="_blank" rel="noopener">{lab}</a> <a class="tag" href="{x["path"]}" download>Word ⬇</a>')
+            rows+=f'<li><b>Lesson {n}:</b> {html.escape(L["t"])}<span class="links">{" ".join(parts)}</span></li>'
+        out+=f'<details class="course"><summary>ESB exam prep course – {len(les)} two-hour lessons</summary><ol class="docs les">{rows}</ol></details>'
+    return out
 
 LOGO = open("/home/claude/build/logo.html").read()
 
 LEVELS = [("e1","Entry 1"),("e2","Entry 2"),("e3","Entry 3"),("l1","Level 1"),("l2","Level 2")]
 SKILLS = [("reading","Reading"),("writing","Writing"),("speaking-listening","Speaking & Listening")]
-EXTRA = [("all-levels","All levels"),("games","Games"),("teacher","Teacher tools")]
+EXTRA = [("all-levels","All levels"),("games","Games")]
 
 def items(folder):
     return [e for e in esol if e["folder"] == folder]
@@ -24,8 +39,8 @@ for lk, ln in LEVELS:
     cells = []
     for sk, sn in SKILLS:
         its = items(f"{lk}/{sk}")
-        n = len(its); nd = len([x for x in docs if x["folder"]==f"{lk}/{sk}"])
-        cells.append(f'<a class="cell{"" if n or nd else " empty"}" href="#{lk}-{sk}"><b>{sn}</b><span>{" · ".join(p for p in [f"{n} online" if n else "", f"{nd} Word" if nd else ""] if p) or "–"}</span></a>')
+        n = len(its); nd = len([x for x in docs if x["folder"]==f"{lk}/{sk}" and not x.get("group")]); nl=len({x["path"].split("/")[-1][:9] for x in docs if x["folder"]==f"{lk}/{sk}" and x.get("group")})
+        cells.append(f'<a class="cell{"" if n or nd or nl else " empty"}" href="#{lk}-{sk}"><b>{sn}</b><span>{" · ".join(p for p in [f"{n} online" if n else "", f"{nd} Word" if nd else "", f"{nl} lessons" if nl else ""] if p) or "–"}</span></a>')
     grid.append(f'<div class="lvl"><h3>{ln}</h3>{"".join(cells)}</div>')
 
 sections = []
@@ -72,6 +87,10 @@ h4{{margin:18px 0 4px;font-size:1rem;color:var(--muted)}}
 .docs{{padding-left:22px}} .docs a{{color:var(--accent)}}
 .docs li a.tag{{font-size:.8rem;font-weight:normal;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:1px 6px;margin-left:6px;text-decoration:none;white-space:nowrap}}
 .docs li a.tag:hover{{color:var(--accent);border-color:var(--accent)}}
+.course{{margin:16px 0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}}
+.course summary{{cursor:pointer;font-weight:bold;color:var(--accent)}}
+.les{{list-style:none;padding-left:0}} .les li{{padding:6px 0;border-top:1px solid var(--line)}}
+.les .links{{display:block;margin-top:2px}} .les .links a:not(.tag){{margin-right:2px}} .les .links a.tag{{margin-right:18px}}
 .hint{{color:var(--muted);font-size:.85rem;margin:0 0 4px}}
 .empty-t{{color:var(--muted);font-style:italic}}
 </style></head><body><div class="wrap">
@@ -92,6 +111,7 @@ for f in sorted({e["folder"] for e in esol}):
         readme.append(f"- [{e['title']}]({e['path']})" + (f" – {e['note']}" if e["note"] else ""))
     d=[x for x in docs if x["folder"]==f]
     if d:
+        d=sorted(d,key=lambda x:(bool(x.get("group")),x["path"]))
         readme.append(""); readme.append("Word documents:")
         for x in d: readme.append(f"- [{x['title']}]({x['path'][:-5]}.pdf) (PDF) · [Word]({x['path']})")
     readme.append("")
