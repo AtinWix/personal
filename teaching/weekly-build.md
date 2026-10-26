@@ -17,7 +17,8 @@ Read `teaching/classes-2026-27.md` first: holidays, week numbers, what each clas
 
 ## Each lesson gets
 - A short lesson plan (aims, ESB criteria, timings, activities, differentiation).
-- Printable handouts as Word .docx: A4, Arial/Calibri ≥11pt, fewest sides, "made by Atin" logo, answers in a separate .docx.
+- Printable handouts as Word .docx: A4, Arial/Calibri ≥11pt, fewest sides, "made by Atin" logo. Answer keys ALWAYS in a separate `<name>-answers.docx` – never on any page students get.
+- End each task on one side where possible (keep-with-next / start the task on a new side); only let a task run onto the next side if keeping it together would waste a lot of paper or leave a lot of dead white space. `tools/split.py` splits answers out and tests this.
 - Colour images and whole-class material on 16:9 projector pages (HTML), not printed.
 - At least one online interactive activity per day (HTML, works on PC widescreen and phones, no audio – no headphones). No live-Claude features in public pages.
 - At least one Kahoot quiz per class per week (give the questions ready to paste into Kahoot).

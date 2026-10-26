@@ -6,6 +6,11 @@
  },
  {
   "folder": "e1/speaking-listening",
+  "path": "e1/speaking-listening/docs/task3-in-the-kitchen-questions-and-answers-answers.docx",
+  "title": "Task 3 In the Kitchen \u2013 questions and answers \u2013 answers (teacher)"
+ },
+ {
+  "folder": "e1/speaking-listening",
   "path": "e1/speaking-listening/docs/quiet-tasks-mixed-skills-worksheet.docx",
   "title": "Quiet tasks \u2013 mixed skills worksheet"
  },
@@ -26,6 +31,11 @@
  },
  {
   "folder": "e2/speaking-listening",
+  "path": "e2/speaking-listening/docs/past-simple-tasks1-2-worksheets-answers.docx",
+  "title": "Past simple Tasks 1\u20132 \u2013 worksheets \u2013 answers (teacher)"
+ },
+ {
+  "folder": "e2/speaking-listening",
   "path": "e2/speaking-listening/docs/esb-exam-prep-all-tasks-student-handouts.docx",
   "title": "ESB exam prep, all tasks \u2013 student handouts"
  },
@@ -41,6 +51,11 @@
  },
  {
   "folder": "e3/reading",
+  "path": "e3/reading/docs/wk01-exam-question-types-sort-activity-answers.docx",
+  "title": "Wk 1 Exam question types \u2013 sort activity \u2013 answers (teacher)"
+ },
+ {
+  "folder": "e3/reading",
   "path": "e3/reading/docs/wk01-exam-question-words-reference-sheet.docx",
   "title": "Wk 1 Exam question words \u2013 reference sheet"
  },
@@ -48,6 +63,11 @@
   "folder": "e3/reading",
   "path": "e3/reading/docs/wk04-student-services-email.docx",
   "title": "Wk 4 Student Services email"
+ },
+ {
+  "folder": "e3/reading",
+  "path": "e3/reading/docs/wk04-student-services-email-answers.docx",
+  "title": "Wk 4 Student Services email \u2013 answers (teacher)"
  },
  {
   "folder": "e3/reading",
@@ -61,8 +81,18 @@
  },
  {
   "folder": "e3/reading",
+  "path": "e3/reading/docs/wk05-fruit-vocabulary-alphabetical-order-worksheet-answers.docx",
+  "title": "Wk 5 Fruit vocabulary and alphabetical order \u2013 worksheet \u2013 answers (teacher)"
+ },
+ {
+  "folder": "e3/reading",
   "path": "e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet.docx",
   "title": "Wk 7 Graffiti warning poster \u2013 lesson and worksheet"
+ },
+ {
+  "folder": "e3/reading",
+  "path": "e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet-answers.docx",
+  "title": "Wk 7 Graffiti warning poster \u2013 lesson and worksheet \u2013 answers (teacher)"
  },
  {
   "folder": "teacher",
