@@ -26,7 +26,7 @@ Read `teaching/classes-2026-27.md` first: holidays, week numbers, what each clas
 - Dialogue-ordering activities: only one valid order.
 
 ## Filing
-- Public repo AtinWix/esol: `<level>/<skill>/weekNN/` – lesson plans (.docx), handouts (.docx), activities (.html). Every .docx also gets a PDF copy with the same name (soffice --headless --convert-to pdf) – the site shows the PDF on screen, with a Word download button. Update the home page and README (the build scripts in this repo, or edit index.html directly). Add the "made by Atin" logo to every page. Remove any "Made with Claude Design" badge.
+- Public repo AtinWix/esol: `<level>/<skill>/weekNN/` – lesson plans (.docx), handouts (.docx), activities (.html). Every .docx also gets a PDF copy with the same name (soffice --headless --convert-to pdf) – the site shows the PDF on screen, with a Word download button. Update the home page and README with `tools/home.py` in this repo (add new entries to tools/esol.json for online pages and tools/docs.json for Word docs; fix the /home/claude/build paths in the script to wherever the repos are cloned). Add the "made by Atin" logo to every page. Remove any "Made with Claude Design" badge.
 - Private repo AtinWix/personal: `teaching/` – the running scheme of work per class, and this week's Record of Work snippets (copy-and-paste text, one per day). SMART targets, records of work and schemes of work NEVER go in the public repo.
 - Commit as `Claude <noreply@anthropic.com>`, then push both repos.
 
