@@ -33,7 +33,7 @@ Next: Week 8 (2 Nov). Exam: Mon 7 Dec 2026 (semester week 13). From Feb half ter
 
 ## E1 Speaking & Listening – H-80022 – Tue Atin, Fri Barry
 Covered: personal information questions and answers; handbook reading quiz; full stops and capitals; jobs vocab; present simple (Barry, Headway Beginner); RARPA; ESB Phase 1 dialogue reconstruction; AI speaking practice interviews; homes, rooms and furniture, there is/are; prepositions of place; describing a picture (Task 3) in pairs with exam roles (20 Oct).
-Next: Tue 3 Nov. Exam: S1 S&L exam week, w/c 30 Nov (exact group day to confirm; E2 group is Fri 27 Nov). Build Atin's Tuesdays only; Barry plans Fridays. From Feb half term the Tuesday class becomes E1 Writing.
+Next: Tue 3 Nov. Exam: S1 S&L exam week, w/c 30 Nov (planner gives no group day). Treat Tue 24 Nov as the last full prep day and Tue 1 Dec as final mock / possible exam day. Build Atin's Tuesdays only; Barry plans Fridays. From Feb half term the Tuesday class becomes E1 Writing.
 
 ## E2 Speaking & Listening – H-80035 – Thu Atin, Fri Joey
 Covered: handbook reading, diagnostics; present simple review; countries and cultures; modal verbs; ESB Task 1 and Task 2 (one-minute talks); past simple (full recap and speaking handout); past continuous (Joey).
