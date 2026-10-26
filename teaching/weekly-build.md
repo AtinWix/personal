@@ -2,6 +2,8 @@
 
 Run on Thursday night after Atin replies "go". Builds NEXT week's lessons (Mon–Thu) and files them in the libraries.
 
+Read `teaching/classes-2026-27.md` first: holidays, week numbers, what each class has covered, and exam timing. After each build, add the new week's topics to "Covered" there.
+
 ## Timetable (2026/27)
 - Until Feb 2027 half term: Mon & Wed E3 Reading (Atin, both days); Tue E1 Speaking & Listening (Atin; Barry does Fri); Thu E2 Speaking & Listening (Atin; Joey does Fri).
 - From Feb 2027 half term: Mon & Wed E3 Speaking & Listening; Tue E1 Writing. No Thursday class.
