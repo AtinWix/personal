@@ -37,5 +37,5 @@ Next: Tue 3 Nov. Exam: S1 S&L exam week, w/c 30 Nov (exact group day to confirm;
 
 ## E2 Speaking & Listening – H-80035 – Thu Atin, Fri Joey
 Covered: handbook reading, diagnostics; present simple review; countries and cultures; modal verbs; ESB Task 1 and Task 2 (one-minute talks); past simple (full recap and speaking handout); past continuous (Joey).
-Joey's Friday plan: 30 Oct can/can't, comparatives; 6 Nov past/future; 13 Nov should/shouldn't; 20 Nov likes, dislikes and preferences; 27 Nov EXAM.
+Joey's Friday plan: 23 Oct can/can't; comparatives (listed 30 Oct, half term – likely 6 Nov); 6 Nov past/future; 13 Nov should/shouldn't; 20 Nov likes, dislikes and preferences; 27 Nov EXAM.
 Next: Thu 5 Nov. Atin's Thursdays (5, 12, 19, 26 Nov) should prepare for the exam and complement Joey's topics. After the exam: next semester material. The Thursday class ends at Feb half term.
