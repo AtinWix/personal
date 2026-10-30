@@ -28,8 +28,8 @@ Semester 2 starts w/c 22 Feb 2027 (after spring half term) = Week 1.
 The college planner counts weeks from 31 Aug (college week 9 = w/c 2 Nov); library folders use semester weeks.
 
 ## E3 Reading – H-80042 – Mon & Wed, Atin only
-Covered so far: induction and handbook as a reading exam; levelling and diagnostics; picnic email writing correction; modal verbs; camping reading, vocab and sentence building; exam-style reading texts; Man City reading exam; fruit/alphabetical order; text types and purpose, skimming vs scanning; ESB exam skills quiz and reading test Set O; question types; dictogloss; Hackney graffiti warning poster with mixed tenses (present simple, present perfect, past simple, will) and a polite notice (19 & 21 Oct).
-Next: Week 8 (2 Nov). Exam: Mon 7 Dec 2026 (semester week 13). From Feb half term this class becomes E3 Speaking & Listening.
+Covered so far: induction and handbook as a reading exam; levelling and diagnostics; picnic email writing correction; modal verbs; camping reading, vocab and sentence building; exam-style reading texts; Man City reading exam; fruit/alphabetical order; text types and purpose, skimming vs scanning; ESB exam skills quiz and reading test Set O; question types; dictogloss; Hackney graffiti warning poster with mixed tenses (present simple, present perfect, past simple, will) and a polite notice (19 & 21 Oct). Week 8 Mon (2 Nov): Exam Prep Lessons 1–2 – main points and purpose; pronouns, word meaning from context, details in different words; projector lesson and Kahoot.
+Next: Wed 4 Nov (Week 8) – Exam Prep Lessons 3–4 suggested. Exam: Mon 7 Dec 2026 (semester week 13). From Feb half term this class becomes E3 Speaking & Listening.
 
 ## E1 Speaking & Listening – H-80022 – Tue Atin, Fri Barry
 Covered: personal information questions and answers; handbook reading quiz; full stops and capitals; jobs vocab; present simple (Barry, Headway Beginner); RARPA; ESB Phase 1 dialogue reconstruction; AI speaking practice interviews; homes, rooms and furniture, there is/are; prepositions of place; describing a picture (Task 3) in pairs with exam roles (20 Oct).
